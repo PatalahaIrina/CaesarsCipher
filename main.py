@@ -1,4 +1,6 @@
 import enchant
+import tkinter as tkinter
+from tkinter import filedialog as filedialog
 
 
 class CaesarsCipher:
@@ -92,3 +94,10 @@ if __name__ == '__main__':
     key = cipher.key
     result = cipher.encrypt(message, key)
     print(f'{key}: {result}')
+
+    root = tkinter.Tk()  # пустое родительское окно
+    root.withdraw()
+    directory_sorted_order = filedialog.askdirectory(
+        title='Путь к файлу')
+    root.destroy()  # уничтожаем родительское
+    # окно
